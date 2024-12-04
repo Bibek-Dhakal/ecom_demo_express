@@ -1,5 +1,3 @@
-const userController = require('../controller/userController');
-
 //------- HOME PAGE --------//
 exports.homePage = (req, res) => {
     res.render('home',{

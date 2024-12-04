@@ -51,9 +51,9 @@
                                         <li class="nav-item">
                                             <a class="nav-link" id="address-tab" data-bs-toggle="tab" href="#address" role="tab" aria-controls="address" aria-selected="true"><i class="fi-rs-marker mr-10"></i>My Address</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="wallet-tab" data-bs-toggle="tab" href="#wallet" role="tab" aria-controls="wallet" aria-selected="true"><i class="fi-rs-smartphone mr-10"></i>My Wallet</a>
-                                        </li>
+<!--                                        <li class="nav-item">-->
+<!--                                            <a class="nav-link" id="wallet-tab" data-bs-toggle="tab" href="#wallet" role="tab" aria-controls="wallet" aria-selected="true"><i class="fi-rs-smartphone mr-10"></i>My Wallet</a>-->
+<!--                                        </li>-->
                                         <!-- <li class="nav-item">
                                             <a class="nav-link" id="account-detail-tab" data-bs-toggle="tab" href="#account-detail" role="tab" aria-controls="account-detail" aria-selected="true"><i class="fi-rs-user mr-10"></i>Account details</a>
                                         </li> -->
@@ -101,7 +101,7 @@
                                                                     <%= orders[i]?.createdAt.toLocaleTimeString() %>
                                                                 </td>
                                                                 <td><%= orders[i]?.orderStatus %></td>
-                                                                <td>₹ <strong><%= orders[i]?.totalAmount %></strong><br> for <%= orders[i]?.totalItems %> items</td>
+                                                                <td>Rs. <strong><%= orders[i]?.totalAmount %></strong><br> for <%= orders[i]?.totalItems %> items</td>
                                                                 <td><%= orders[i]?.paymentStatus %></td>
                                                                 <td>
                                                                     <a href="/user/view-order/<%= orders[i]?._id %>" class="btn-small d-block">View</a>
@@ -194,69 +194,69 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="wallet" role="tabpanel" aria-labelledby="wallet-tab">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <div class="row d-flex">
-                                                    <div class="col-6">
-                                                        <h5 class="mb-0 float-left">Your Wallet</h5>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <h5 class="mb-0 float-end">Wallet balance : ₹<span id="walletBalance"><% if(locals.walletBalance) { %> <%= walletBalance %> <% } else { %> 0 <% } %></span></h5>
-                                                    </div>
-                                                </div>
-                                            </div>                                        
-                                              
-                                            <div class="card-body">
-                                                <div class="table-responsive">
-                                                    <div class="row mb-5 w-100">
-                                                        <% if (locals.walletDetails) { %>
-                                                            <% if (walletDetails.length > 0) { %> 
-                                                                 <h5 class="col">Wallet Transactions</h5>
-                                                            <% } %>
-                                                        <% } %>
-                                                        <div class="col">
-                                                            <a id="add-to-wallet-btn" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#addToWalletModal">
-                                                                <i class="material-icons md-plus"></i> Add money to wallet
-                                                            </a>
-                                                        </div>
-                                                    </div>    
-                                                    <% if (locals.walletDetails) { %> 
-                                                        <% if (walletDetails.length > 0) { %>                                                  
-                                                    <table class="table" id="walletTable"> 
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Date</th>
-                                                                <th>Amount</th>
-                                                                <th>Type</th>
-                                                                <th>Remarks</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>                                  
-                                                                <% for (let i = 0; i < walletDetails.length; i++) { %>
-                                                                <tr>
-                                                                    <td>
-                                                                        <%= walletDetails[i]?.timestamp.toLocaleDateString() %>
-                                                                        <%= walletDetails[i]?.timestamp.toLocaleTimeString() %>
-                                                                    </td>
-                                                                    <td>₹ <%= walletDetails[i]?.amount %></td>
-                                                                    <td>
-                                                                        <span style="font-size: 14px;">
-                                                                            <% if (walletDetails[i]?.transaction === "C") { %> CREDIT
-                                                                            <% } else if (walletDetails[i]?.transaction === "D") { %> DEBIT <% } %>                                                                            
-                                                                        </span>
-                                                                    </td>                                                                    
-                                                                    <td><%= walletDetails[i]?.remarks %></td>
-                                                                </tr>
-                                                                <% } %>
-                                                        </tbody>
-                                                    </table>
-                                                        <% } %>
-                                                    <% } %>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+<!--                                    <div class="tab-pane fade" id="wallet" role="tabpanel" aria-labelledby="wallet-tab">-->
+<!--                                        <div class="card">-->
+<!--                                            <div class="card-header">-->
+<!--                                                <div class="row d-flex">-->
+<!--                                                    <div class="col-6">-->
+<!--                                                        <h5 class="mb-0 float-left">Your Wallet</h5>-->
+<!--                                                    </div>-->
+<!--                                                    <div class="col-6">-->
+<!--                                                        <h5 class="mb-0 float-end">Wallet balance : Rs.<span id="walletBalance"><% if(locals.walletBalance) { %> <%= walletBalance %> <% } else { %> 0 <% } %></span></h5>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+
+<!--                                            <div class="card-body">-->
+<!--                                                <div class="table-responsive">-->
+<!--                                                    <div class="row mb-5 w-100">-->
+<!--                                                        <% if (locals.walletDetails) { %>-->
+<!--                                                            <% if (walletDetails.length > 0) { %>-->
+<!--                                                                 <h5 class="col">Wallet Transactions</h5>-->
+<!--                                                            <% } %>-->
+<!--                                                        <% } %>-->
+<!--                                                        <div class="col">-->
+<!--                                                            <a id="add-to-wallet-btn" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#addToWalletModal">-->
+<!--                                                                <i class="material-icons md-plus"></i> Add money to wallet-->
+<!--                                                            </a>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                    <% if (locals.walletDetails) { %>-->
+<!--                                                        <% if (walletDetails.length > 0) { %>-->
+<!--                                                    <table class="table" id="walletTable">-->
+<!--                                                        <thead>-->
+<!--                                                            <tr>-->
+<!--                                                                <th>Date</th>-->
+<!--                                                                <th>Amount</th>-->
+<!--                                                                <th>Type</th>-->
+<!--                                                                <th>Remarks</th>-->
+<!--                                                            </tr>-->
+<!--                                                        </thead>-->
+<!--                                                        <tbody>-->
+<!--                                                                <% for (let i = 0; i < walletDetails.length; i++) { %>-->
+<!--                                                                <tr>-->
+<!--                                                                    <td>-->
+<!--                                                                        <%= walletDetails[i]?.timestamp.toLocaleDateString() %>-->
+<!--                                                                        <%= walletDetails[i]?.timestamp.toLocaleTimeString() %>-->
+<!--                                                                    </td>-->
+<!--                                                                    <td>Rs. <%= walletDetails[i]?.amount %></td>-->
+<!--                                                                    <td>-->
+<!--                                                                        <span style="font-size: 14px;">-->
+<!--                                                                            <% if (walletDetails[i]?.transaction === "C") { %> CREDIT-->
+<!--                                                                            <% } else if (walletDetails[i]?.transaction === "D") { %> DEBIT <% } %>-->
+<!--                                                                        </span>-->
+<!--                                                                    </td>-->
+<!--                                                                    <td><%= walletDetails[i]?.remarks %></td>-->
+<!--                                                                </tr>-->
+<!--                                                                <% } %>-->
+<!--                                                        </tbody>-->
+<!--                                                    </table>-->
+<!--                                                        <% } %>-->
+<!--                                                    <% } %>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
                                     <!-- <div class="tab-pane fade" id="account-detail" role="tabpanel" aria-labelledby="account-detail-tab">
                                         <div class="card">
                                             <div class="card-header">
@@ -692,7 +692,7 @@
                     <div class="modal-body">
                         <div class="form-group w-100">
                             <label for="categoryName">Enter Amount</label>
-                            <input class="form-control" id="inputAmount" name="amount" placeholder="Min.₹1  Max.₹99999" value=""/>
+                            <input class="form-control" id="inputAmount" name="amount" placeholder="Min.Rs.1  Max.Rs.99999" value=""/>
                             <div class="error text-danger ms-2"></div>
                         </div> 
                     </div>
@@ -792,11 +792,11 @@
                 amountToAdd.focus();
                 return false;
             } else if(amountToAddVal < 1){
-                setError(amountToAdd, 'Enter amount greater than ₹1');
+                setError(amountToAdd, 'Enter amount greater than Rs.1');
                 amountToAdd.focus();
                 return false;
             } else if(amountToAddVal > 99999){
-                setError(amountToAdd, 'Enter amount less than ₹100000');
+                setError(amountToAdd, 'Enter amount less than Rs.100000');
                 amountToAdd.focus();
                 return false;
             }
@@ -886,7 +886,7 @@
                         //update table
                         $('#walletTable tbody').prepend(
                             "<tr><td>" + new Date(data?.timestamp).toLocaleDateString() + " "
-                            + new Date(data?.timestamp).toLocaleTimeString() + "</td><td>₹ " + data?.amount + 
+                            + new Date(data?.timestamp).toLocaleTimeString() + "</td><td>Rs. " + data?.amount +
                             "</td><td>" + transactionHtml + "</td><td>" + data?.remarks + "</td></tr>");
                         //update wallet balance
                         let walletBalance = $('#walletBalance').text();

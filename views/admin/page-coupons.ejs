@@ -66,8 +66,8 @@
                                           </td>
                                           <td><%= coupons[i]?.description %></td>
                                           <td><%= coupons[i]?.discount %></td>
-                                          <td>₹ <%= coupons[i]?.minAmount %></td>
-                                          <td>₹ <%= coupons[i]?.maxDiscount %></td> 
+                                          <td>Rs. <%= coupons[i]?.minAmount %></td>
+                                          <td>Rs. <%= coupons[i]?.maxDiscount %></td>
                                           <td>                                               
                                             <% if(coupons[i]?.isListed){ %>
                                                 <span class="badge rounded-pill alert-success">Visible</span>
@@ -144,12 +144,12 @@
                                 <div class="error text-danger ms-2"></div>
                             </div> 
                             <div class="form-group mt-3">
-                                <label for="minAmount">Min. Amount in ₹</label>
+                                <label for="minAmount">Min. Amount in Rs.</label>
                                 <input class="form-control edit-minamount" id="minAmount" name="minAmount" placeholder="Enter mininum amount" <% if(locals.inputData) {%>  value = "<%= inputData?.minAmount %>"  <% } %> >
                                 <div class="error text-danger ms-2"></div>
                             </div>  
                             <div class="form-group mt-3">
-                                <label for="maxDiscount">Max. Discount in ₹</label>
+                                <label for="maxDiscount">Max. Discount in Rs.</label>
                                 <input class="form-control edit-maxdiscount" id="maxDiscount" name="maxDiscount" placeholder="Enter maximum discount" <% if(locals.inputData) {%>  value = "<%= inputData?.maxDiscount %>"  <% } %> >
                                 <div class="error text-danger ms-2"></div>
                             </div>  

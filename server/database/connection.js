@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
-const {MONGO_URI, DB_NAME} = require("../env");
+const {MONGO_URI} = require("../env");
 
 const connectDB = async() =>{
     try{
         const con = await mongoose.connect(MONGO_URI, {
-            dbName: DB_NAME,
+            dbName: 'ecom-5th-sem',
         });
         console.log(`MongoDB connected : ${con.connection.host}`)
     }catch(err){

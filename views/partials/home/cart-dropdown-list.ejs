@@ -9,7 +9,7 @@
                 </div>
                 <div class="shopping-cart-title">
                     <h4><a href="/<%= cartItems[i]?.productInfo[0].category%>/<%= cartItems[i]?.productInfo[0]._id %>"><%= cartItems[i]?.productInfo[0].productName %></a></h4>
-                    <h4><span><%= cartItems[i]?.quantity %> × </span>₹<%= cartItems[i]?.salePrice %></h4>
+                    <h4><span><%= cartItems[i]?.quantity %> × </span>Rs.<%= cartItems[i]?.salePrice %></h4>
                 </div>
                 <div class="shopping-cart-delete">
                     <a href="/remove-cart-item/<%= cartItems[i]?.productInfo[0]._id %>"><i class="fi-rs-cross-small"></i></a>
@@ -20,7 +20,7 @@
         </ul>
                 <div class="shopping-cart-footer">
                     <div class="shopping-cart-total ">
-                        <h4>Total <span>₹<% if(locals.subTotal) { %> <%= subTotal %> <% } else { %>0<% }%></span></h4>
+                        <h4>Total <span>Rs.<% if(locals.subTotal) { %> <%= subTotal %> <% } else { %>0<% }%></span></h4>
                     </div>
                     <div class="shopping-cart-button">
                         <a href="/cart" class="outline">View cart</a>

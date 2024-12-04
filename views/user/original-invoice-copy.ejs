@@ -69,7 +69,7 @@
                                                 <div class="intro">
                                                     Hi <strong><%= order[0]?.customerInfo[0]?.firstName %> <%= order[0]?.customerInfo[0]?.lastName %></strong>,
                                                     <br>
-                                                    This is the invoice for order <strong>#<%= order[0]?._id %></strong> of <b>₹ <%= order[0]?.finalAmount %></b>
+                                                    This is the invoice for order <strong>#<%= order[0]?._id %></strong> of <b>Rs. <%= order[0]?.finalAmount %></b>
                                                 </div>
                     
                                                 <div class="payment-info">
@@ -157,7 +157,7 @@
                                                                 <%= order[i].products?.salePrice %>
                                                             </div>
                                                             <div class="col-md-4 amount text-end">
-                                                                ₹<%= order[i].products?.quantity * order[i]?.products?.salePrice %>
+                                                                Rs.<%= order[i].products?.quantity * order[i]?.products?.salePrice %>
                                                             </div>
                                                         </div>
                                                         <% }  %>
@@ -168,16 +168,16 @@
                                                             <%= order[0]?.shippingAddress?.notes %>
                                                         </p>
                                                         <div class="field">
-                                                            Subtotal <span>₹ <%= order[0]?.totalAmount %></span>
+                                                            Subtotal <span>Rs. <%= order[0]?.totalAmount %></span>
                                                         </div>
                                                         <div class="field">
-                                                            Shipping <span>₹ <%= order[0]?.shippingCost || '0' %></span>
+                                                            Shipping <span>Rs. <%= order[0]?.shippingCost || '0' %></span>
                                                         </div>
                                                         <div class="field">
-                                                            Discount <span>- ₹ <%= order[0]?.discount || '0' %></span>
+                                                            Discount <span>- Rs. <%= order[0]?.discount || '0' %></span>
                                                         </div>
                                                         <div class="field grand-total">
-                                                            Total <span>₹ <%= order[0]?.finalAmount %></span>
+                                                            Total <span>Rs. <%= order[0]?.finalAmount %></span>
                                                         </div>
                                                     </div>
                                                 </div>

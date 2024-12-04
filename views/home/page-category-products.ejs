@@ -128,8 +128,8 @@
                                                     data-productname="<%= products[i]?.productName %>"
                                                     data-productcategory="<%= products[i]?.category %>"
                                                     data-productbrand="<%= products[i]?.brand %>"
-                                                    data-productregularprice="₹<%= products[i]?.regularPrice %>"
-                                                    data-productsaleprice="₹<%= products[i]?.salePrice %>"
+                                                    data-productregularprice="Rs.<%= products[i]?.regularPrice %>"
+                                                    data-productsaleprice="Rs.<%= products[i]?.salePrice %>"
                                                     data-productdescription="<%= products[i]?.shortDescription %>"
                                                     data-productstock="<%= products[i]?.stock %> Items In Stock"
                                                     data-productimage="/img/products/<%= products[i]?.images[0] %>"
@@ -147,8 +147,8 @@
                                             </div>
                                             <h2><a href="/<%= products[i]?.category.toLowerCase() %>/<%= products[i]?._id %>"><%= products[i]?.productName %></a></h2>
                                             <div class="product-price">
-                                                <span>₹<%= products[i]?.salePrice %> </span>
-                                                <span class="old-price">₹<%= products[i]?.regularPrice %></span>
+                                                <span>Rs.<%= products[i]?.salePrice %> </span>
+                                                <span class="old-price">Rs.<%= products[i]?.regularPrice %></span>
                                             </div>
                                             <p class="mt-15"><%= products[i]?.shortDescription %></p>
                                             <div class="product-action-1 show">

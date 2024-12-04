@@ -69,7 +69,7 @@
                                                 <% flag = 1 %>
                                             <% } %> 
                                         </td>
-                                        <td class="price" data-title="Price">₹<span id="itemPrice<%= i %>" ><%= cartItems[i].salePrice %></span></td>
+                                        <td class="price" data-title="Price">Rs.<span id="itemPrice<%= i %>" ><%= cartItems[i].salePrice %></span></td>
                                         <td class="text-center" data-title="Stock">
                                             <a id="itemDown<%= i %>" onclick="changeQuantity('<%= i %>', '<%= cartItems[i]._id %>','<%= cartItems[i].productInfo[0]._id %>',-1)" class="btn-primary-outline m-auto mx-1 py-0 px-1" style="font-weight: 700; font-size: 18px;">-</a>
                                             <span id="itemQty<%= i %>" class="qty-val" ><%= cartItems[i].quantity %> </span>
@@ -81,7 +81,7 @@
                                             </div> -->
                                         </td>
                                         <td class="text-right" data-title="Cart">
-                                            <span id="itemSubTotal<%= i %>">₹<%= cartItems[i].salePrice * cartItems[i].quantity %></span>
+                                            <span id="itemSubTotal<%= i %>">Rs.<%= cartItems[i].salePrice * cartItems[i].quantity %></span>
                                         </td>
                                         <td class="action" data-title="Remove"><a href="/remove-cart-item/<%= cartItems[i].productInfo[0]._id %>" class="text-muted"><i class="fi-rs-trash"></i></a></td>
                                     </tr>
@@ -126,7 +126,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="cart_total_label">Cart Subtotal</td>
-                                                    <td class="cart_total_amount font-lg fw-900 text-brand">₹<span id="subTotal"  class="">
+                                                    <td class="cart_total_amount font-lg fw-900 text-brand">Rs.<span id="subTotal"  class="">
                                                         <% if(locals.subTotal) { %> <%= subTotal %> <% } %>
                                                         </span></td>
                                                 </tr>
@@ -136,7 +136,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="cart_total_label">Total</td>
-                                                    <td class="cart_total_amount font-xl text-brand"><strong>₹<span id="totalAmt" class="fw-900"><% if(locals.subTotal) { %> <%= subTotal %> <% } %></span></strong></td>
+                                                    <td class="cart_total_amount font-xl text-brand"><strong>Rs.<span id="totalAmt" class="fw-900"><% if(locals.subTotal) { %> <%= subTotal %> <% } %></span></strong></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -226,7 +226,7 @@
                         let itemPrice = $(itemPriceId).text();
                         itemPrice = parseInt(itemPrice) * count;
                         console.log("Subtotal : " + itemPrice);
-                        $(itemSubTotalId).text('₹' + itemPrice);
+                        $(itemSubTotalId).text('Rs.' + itemPrice);
                         //cart item count
                         let cartCount = $('#cartItemsCount').text();
                         cartCount = parseInt(cartCount) + Number(newCount);

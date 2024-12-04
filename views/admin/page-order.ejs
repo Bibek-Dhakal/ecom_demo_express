@@ -62,7 +62,7 @@
                                         <td><a class="fw-bold">#<%= orders[i].orderId %></a> </td>
                                         <td><%= orders[i]?.shippingAddress?.customerName %></td>
                                         <td><%= orders[i]?.createdAt.toLocaleDateString() %><br><%= orders[i]?.createdAt.toLocaleTimeString() %></td>
-                                        <td>₹<%= orders[i]?.totalAmount %><br>  <%= orders[i]?.totalItems %> items</td>
+                                        <td>Rs.<%= orders[i]?.totalAmount %><br>  <%= orders[i]?.totalItems %> items</td>
                                         <td>
                                             <% if(typeof orders[i]?.paymentStatus === 'string') { %>
                                                 <span 

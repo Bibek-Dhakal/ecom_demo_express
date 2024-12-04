@@ -5,9 +5,9 @@ const {getListedCategories} = require('../server/controller/categoryController')
 const {getAllCartItems, getCartItemsCount, getWishItemsCount} = require('../server/controller/cartController');
 const {getAllOrdersOfUser, getSingleOrderDetails, generateInvoicePDF, cancelOrder, returnOrder} = require('../server/controller/orderController');
 const {userDashboardPage, userSignupPage, userVerifyOtpPage, userLoginPage, userLogout, getUserOrderDetailsPage, getUserOrderInvoicePage} = require('../server/services/render');
-const {getAllAddresses, getUserWalletDetails, getWalletBalance, registerUser, loginOTPVerify, userLogin, addNewAddress, deleteAddress, editAddress, addToWalletGetRazorpay, verifyWalletRazorpayPayment} = require('../server/controller/userController');
+const {getAllAddresses, registerUser, loginOTPVerify, userLogin, addNewAddress, deleteAddress, editAddress} = require('../server/controller/userController');
 
-router.get('/', authenticateUser, getListedCategories, getAllCartItems, getCartItemsCount, getWishItemsCount, getAllAddresses, getAllOrdersOfUser, getUserWalletDetails, getWalletBalance, userDashboardPage);
+router.get('/', authenticateUser, getListedCategories, getAllCartItems, getCartItemsCount, getWishItemsCount, getAllAddresses, getAllOrdersOfUser, userDashboardPage);
 router.get('/signup', getListedCategories, userSignupPage);
 router.get('/verify-otp', getListedCategories, userVerifyOtpPage);
 router.get('/login', getListedCategories, userLoginPage);
@@ -24,9 +24,6 @@ router.post('/login', userLogin);
 router.post('/add-new-address', authenticateUser, addNewAddress);
 router.post('/delete-address',authenticateUser,  deleteAddress);
 router.post('/edit-address', authenticateUser, editAddress);
-
-router.post('/add-to-wallet', authenticateUser, addToWalletGetRazorpay);
-router.post('/verify-wallet-payment', authenticateUser, verifyWalletRazorpayPayment);
 
 router.post('/cancel-order', authenticateUser, cancelOrder);
 router.post('/return-order', authenticateUser, returnOrder);

@@ -80,18 +80,12 @@ function validateAddressInputs() {
     } else{
         setSuccess(state);
     }
-    
-    const pincodeRegex = /^\d{6}$/;
+
     if(pincodeValue === '') {
         setError(pincode, 'Please enter pincode');
         pincode.focus();
         return false;
-    } else if(!pincodeValue.match(pincodeRegex)){
-        setError(pincode, 'Enter valid pincode');
-        pincode.focus();
-        return false;
-    }
-    else{
+    } else{
         setSuccess(pincode);
     }
 

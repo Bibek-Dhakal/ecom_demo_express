@@ -117,7 +117,7 @@
                                                 <%= salesData[i]?.products[j]?.productName %> x <%= salesData[i]?.products[j]?.quantity %>
                                             <% } %>
                                         </td>
-                                        <td>₹<%= salesData[i]?.totalAmount %></td>
+                                        <td>Rs.<%= salesData[i]?.totalAmount %></td>
                                         <td><i class="material-icons md-payment font-xxl text-muted mr-5"></i><%= salesData[i]?.paymentMethod %></td>
                                     </tr> 
                                         <% } %>                                 
@@ -290,7 +290,7 @@
             //                 if(j !== 0) {  prodText += '<br>' } 
             //                 prodText += data?.products[j]?.productName + ' x ' + data?.products[j]?.quantity; 
             //             } 
-            //            $('tbody').append('<tr><td><a class="fw-bold" href="/admin/orders/'+ data._id +'" target="_blank">#'+ data.orderId +'</a> </td><td>'+ new Date(data?.createdAt).toLocaleDateString() +'<br>'+ new Date(data?.createdAt).toLocaleTimeString() +'</td><td>'+ data?.shippingAddress?.customerName +'</td><td>'+prodText+'</td><td>₹'+ data?.totalAmount +'</td><td><i class="material-icons md-payment font-xxl text-muted mr-5"></i>'+ data?.paymentMethod +'</td></tr> ');
+            //            $('tbody').append('<tr><td><a class="fw-bold" href="/admin/orders/'+ data._id +'" target="_blank">#'+ data.orderId +'</a> </td><td>'+ new Date(data?.createdAt).toLocaleDateString() +'<br>'+ new Date(data?.createdAt).toLocaleTimeString() +'</td><td>'+ data?.shippingAddress?.customerName +'</td><td>'+prodText+'</td><td>Rs.'+ data?.totalAmount +'</td><td><i class="material-icons md-payment font-xxl text-muted mr-5"></i>'+ data?.paymentMethod +'</td></tr> ');
             //         }
             //     },
             //     error: function(){

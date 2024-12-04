@@ -170,9 +170,9 @@
                                                         <div class="info"><%= order[i].productInfo[0]?.productName %></div>
                                                     </a>
                                                 </td>
-                                                <td> ₹<%= order[i]?.products?.salePrice %> </td>
+                                                <td> Rs.<%= order[i]?.products?.salePrice %> </td>
                                                 <td> <%= order[i].products?.quantity %> </td>
-                                                <td class="text-end"> ₹<%= order[i].products?.quantity * order[i]?.products?.salePrice %> </td>
+                                                <td class="text-end"> Rs.<%= order[i].products?.quantity * order[i]?.products?.salePrice %> </td>
                                             </tr>
                                             <% }  %>
                                             <tr>
@@ -180,20 +180,20 @@
                                                     <article class="float-end">
                                                         <dl class="dlist">
                                                             <dt>Subtotal:</dt>
-                                                            <dd>₹ <%= order[0]?.totalAmount %></dd>
+                                                            <dd>Rs. <%= order[0]?.totalAmount %></dd>
                                                         </dl>
                                                         <dl class="dlist">
                                                             <dt>Shipping cost:</dt>
-                                                            <dd>₹ <%= order[0]?.shippingCost || '0' %></dd>
+                                                            <dd>Rs. <%= order[0]?.shippingCost || '0' %></dd>
                                                         </dl>
                                                         </dl>
                                                         <dl class="dlist">
                                                             <dt>Discount:</dt>
-                                                            <dd>- ₹ <%= order[0]?.discount || '0' %></dd>
+                                                            <dd>- Rs. <%= order[0]?.discount || '0' %></dd>
                                                         </dl>
                                                         <dl class="dlist">
                                                             <dt>Grand total:</dt>
-                                                            <dd> <b class="h5">₹ <%= order[0]?.finalAmount %></b> </dd>
+                                                            <dd> <b class="h5">Rs. <%= order[0]?.finalAmount %></b> </dd>
                                                         </dl>
                                                         <dl class="dlist">
                                                             <dt class="text-muted">Payment status:</dt>
