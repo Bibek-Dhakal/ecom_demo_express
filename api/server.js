@@ -7,16 +7,16 @@ const nocache = require("nocache");
 const bodyparser = require('body-parser');
 const session = require('express-session');
 const {v4: uuidv4} = require('uuid');
-const connectDB = require('./server/database/connection');
+const connectDB = require('../server/database/connection');
 const MongoStore = require('connect-mongo');
-const {PORT, MONGO_URI, DB_NAME} = require('./server/env');
+const {PORT, MONGO_URI, DB_NAME} = require('../server/env');
 
 const app = express();
 
-const adminRouter = require('./routes/adminRoute');
-const userRouter = require('./routes/userRoute');
-const homeRouter = require('./routes/homeRoute');
-const {handleError, handle404} = require("./server/middleware/handle-error");
+const adminRouter = require('../routes/adminRoute');
+const userRouter = require('../routes/userRoute');
+const homeRouter = require('../routes/homeRoute');
+const {handleError, handle404} = require("../server/middleware/handle-error");
 
 // log requests
 app.use(logger('dev'));
