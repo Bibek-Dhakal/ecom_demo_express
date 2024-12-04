@@ -1,6 +1,7 @@
 module.exports = {
     NODE_ENV: process.env.NODE_ENV || 'development',
     PORT: process.env.PORT || 3000,
+    DB_NAME: 'ecom-5th-sem',
     MONGO_URI: process.env.MONGO_URI || 'mongodb://localhost:27017',
     EMAIL_USER: process.env.EMAIL_USER || 'defaultuser@example.com',
     EMAIL_PASS: process.env.EMAIL_PASS || 'defaultpassword',

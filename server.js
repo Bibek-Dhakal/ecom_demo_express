@@ -8,7 +8,8 @@ const bodyparser = require('body-parser');
 const session = require('express-session');
 const {v4: uuidv4} = require('uuid');
 const connectDB = require('./server/database/connection');
-const {PORT} = require('./server/env'); // Importing the configuration
+const MongoStore = require('connect-mongo');
+const {PORT, MONGO_URI, DB_NAME} = require('./server/env');
 
 const app = express();
 
@@ -39,7 +40,11 @@ app.use(session({
     secret: uuidv4(),
     cookie: {maxAge: 1800000},
     saveUninitialized: true,
-    resave: false
+    resave: false,
+    store: MongoStore.create({
+        mongoUrl: MONGO_URI,
+        dbName: DB_NAME,
+    })
 }));
 
 app.set("view engine", "ejs");
