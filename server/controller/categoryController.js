@@ -195,14 +195,14 @@ exports.updateCategory = async (req, res, next) => {
         await Categorydb.findOne({ categoryName: { $regex: regex, $options: 'i' }, isDeleted: false, _id:{$ne: id} })
                 .then( async data => {
                     if (data !== null) {
-                        console.log("Category name already exsits!");   
+                        console.log("Category name already exits!");
                         // res.redirect('/admin/category');  
                         await getAllCategories()
                         .then(data => {
                             res.render('page-category', {
                                 pageTitle: "Category Management",
                                 categories: data,
-                                errMsg: "Oops..!! Category with entered name already exsits.",
+                                errMsg: "Oops..!! Category with entered name already exits.",
                                 inputData: req.body,
                                 action: "edit"
                             });
@@ -221,7 +221,7 @@ exports.updateCategory = async (req, res, next) => {
                             categoryName: categoryName,
                             description: description,
                             slug: slug,
-                            isListed: isListed === "on" ? true : false,
+                            isListed: isListed === "on",
                             updatedAt: Date.now(),
                             _id: id
                         }

@@ -55,21 +55,20 @@ app.set('views', [
     path.join(__dirname, 'views/user/')
 ]);
 
-app.use(express.static(path.join(__dirname, "public")));
-app.use("/css", express.static(path.join(__dirname, "public/css")));
-app.use("/js", express.static(path.join(__dirname, "public/js")));
-app.use("/img", express.static(path.join(__dirname, "public/img")));
-app.use("/assets", express.static(path.join(__dirname, "public/assets")));
-app.use("/assets2", express.static(path.join(__dirname, "public/assets2")));
+app.use(express.static(path.join(__dirname, "../public")));
+app.use("/css", express.static(path.join(__dirname, "../public/css")));
+app.use("/js", express.static(path.join(__dirname, "../public/js")));
+app.use("/img", express.static(path.join(__dirname, "../public/img")));
+app.use("/assets", express.static(path.join(__dirname, "../public/assets")));
+app.use("/assets2", express.static(path.join(__dirname, "../public/assets2")));
 
 // routes
 app.use('/admin', adminRouter);
 app.use('/user', userRouter);
 app.use('/', homeRouter);
 
-// catch 404 and forward to error handler
-app.use(handle404);
 // error handler
+app.use(handle404);
 app.use(handleError);
 
 app.listen(PORT, () => {
